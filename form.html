@@ -8,80 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/small_asm_core_logo.png">
     <script src="global.js"></script>
-    <style>
-
-        @keyframes rotate
-        {
-            0% {transform: rotate(0deg);}
-            40%{transform: rotate(360deg);}
-        }
-
-        fieldset 
-        {
-            margin-top: 4%;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-
-            font-size: x-large;
-            display: inline;
-            box-shadow: 1px 1px 4px;
-            border: none;
-            border-radius: 10%;
-        }
-
-        input 
-        {
-            height: 20px;
-        }
-
-        #fieldsets 
-        {
-            display: flex;
-            margin-left: 30%;
-            margin-right: 30%;
-        }
-
-        #gefi 
-        {
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        select 
-        {
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        button 
-        {
-            display: block;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 1%;
-            background: none;
-            border: none;
-        }
-
-        #logo 
-        {
-            animation-duration: 6s;
-            animation-name: rotate;
-            animation-iteration-count: infinite;
-            transform: rotate(360deg);
-        }
-
-        footer 
-        {
-            margin-top: -0.01%;
-        }
-
-
-    </style>
+    
 </head>
 <body>
     <aside>
@@ -170,13 +97,16 @@
                     </div>
                 </fieldset>
             </div>
-            <button class="appear" type="submit">
-            Invia
-            </button>
 
-            <button class="appear" type="reset">
-            Ripristina
-            </button>
+            <div style="width: fit-content; margin: auto auto; margin-top: 15px;">
+                <button class="appear" type="submit">
+                Invia
+                </button>
+
+                <button class="appear" type="reset">
+                Ripristina
+                </button>
+            </div>
         </form>
     </main>
 
