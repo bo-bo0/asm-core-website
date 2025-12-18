@@ -148,7 +148,7 @@
     box-shadow: var(--shadow-2);
   }
   
-  legend{ padding: 0 .6rem; font-weight:700; }
+  legend{ padding: 0 .6rem; font-weight:700; text-align: center; }
   
   .inp{ margin: .6rem 0; display:flex; flex-direction:column; gap:.35rem; }
   label{ font-size: .98rem; color:#233745; }
@@ -214,7 +214,12 @@
   
   /* footer */
   footer{ display:block; text-align:center; padding: .9rem 1rem; margin: 3rem auto 2rem auto; color:var(--muted); }
-  #copy{ margin:0; }
+  #copy
+  {
+      width: fit-content;
+      margin: auto auto;
+      font-size: medium;
+  }
   
   /* Table in tab.html */
   table{ width: 100%; border-collapse: collapse; max-width: var(--max-width); margin: 0 auto; box-shadow: var(--shadow-1); }
