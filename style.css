@@ -1,0 +1,263 @@
+/*
+  style.improved.css
+  Version: 1.0
+  Note: CSS rewrite for the "Asm Core" site uploaded by the user.
+  Replace your existing style.css with this file to apply the new look.
+
+  Highlights:
+  - CSS variables for easy theme tweaking
+  - Responsive layout: sticky top navigation turns into a compact bar on mobile
+  - Modern, subtle neumorphic cards for fieldsets and content
+  - Fully restyled form controls (inputs, textarea, file, radios, selects)
+  - Accessible focus states and improved contrast
+  - Soft animations & reduced motion support
+  - Graceful handling of inline width/style attributes in original HTML
+*/
+
+:root{
+    --bg-1: #f7fbff;
+    --bg-2: #e9f7ff;
+    --brand-1: #0072ff; /* main brand color */
+    --brand-2: #00c6ff; /* gradient accent */
+    --muted: #5b6b7b;
+    --card: #ffffff;
+    --glass: rgba(255,255,255,0.6);
+    --radius: 14px;
+    --shadow-1: 0 6px 18px rgba(12,40,80,0.08);
+    --shadow-2: 0 3px 8px rgba(12,40,80,0.06);
+    --success: #16a34a;
+    --danger: #e53935;
+    --max-width: 1100px;
+  }
+  
+  /* Reset-ish (targeted, non-invasive) */
+  *{box-sizing: border-box}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg,var(--bg-1) 0%, var(--bg-2) 60%, #fff 100%);
+    color:#15202b;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+  
+  /* Layout container */
+  :root > body > * { /* nothing */ }
+  
+  /* Top aside as navigation bar */
+  aside{
+    display:flex;
+    gap: clamp(8px,2vw,28px);
+    align-items:center;
+    justify-content:center;
+    padding: .9rem 1.1rem;
+    position: sticky;
+    top:0;
+    z-index:1200;
+    background: linear-gradient(90deg,var(--brand-2), var(--brand-1));
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+  
+  .menuH{
+    text-decoration:none;
+    font-weight:600;
+    font-size:1.05rem;
+    color: white;
+    padding: .2rem .35rem;
+    border-radius:8px;
+    transition: transform .18s ease, opacity .18s ease, background .18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .menuH h2{margin:0;font-size:1rem;}
+  
+  .menuH:hover{ transform: translateY(-3px); opacity:.95; }
+  
+  /* Header */
+  header{
+    max-width:var(--max-width);
+    margin: 2.2rem auto 1rem auto;
+    padding: 0 1rem;
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  header h1{
+    font-size:clamp(1.25rem, 2.6vw, 2.2rem);
+    margin:0;
+    color:var(--brand-1);
+    text-align:center;
+    letter-spacing: -.02em;
+  }
+  
+  /* logo animation - subtle */
+  #logo{
+    width: clamp(60px,8vw,140px) !important; /* override inline widths */
+    display:block;
+    margin:0 auto;
+    filter: drop-shadow(0 6px 14px rgba(0,114,255,0.14));
+    transition: transform .8s cubic-bezier(.2,.9,.2,1);
+  }
+  #logo:hover{ transform: rotate(6deg) scale(1.02); }
+  
+  /* Main content wrapper */
+  main{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+  
+  /* Sections & cards */
+  section{
+    background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+    border-radius: var(--radius);
+    padding: 1.1rem;
+    box-shadow: var(--shadow-1);
+  }
+  
+  .outlinedP{
+    padding: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(240,248,255,0.6));
+    border: 1px solid rgba(10,40,110,0.04);
+    color:var(--muted);
+  }
+  
+  /* iframe gallery */
+  .frames{ display:flex; gap: 1rem; flex-wrap:wrap; justify-content:center; }
+  .frames iframe{ border: none; border-radius: 10px; box-shadow: var(--shadow-2); width: clamp(260px, 30vw, 400px); height: clamp(170px, 22vw, 230px); }
+  
+  /* FORM styling */
+  form{ width:100%; }
+  #fieldsets{
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  fieldset{
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,250,255,0.85));
+    border-radius: 12px;
+    border: 1px solid rgba(7,60,120,0.06);
+    padding: 1rem;
+    width: 100%;
+    max-width: 360px; /* override inline width: 260px */
+    box-shadow: var(--shadow-2);
+  }
+  
+  legend{ padding: 0 .6rem; font-weight:700; }
+  
+  .inp{ margin: .6rem 0; display:flex; flex-direction:column; gap:.35rem; }
+  label{ font-size: .98rem; color:#233745; }
+  
+  input[type="text"], input[type="email"], input[type="tel"], textarea, select{
+    padding: .55rem .65rem;
+    border-radius: 9px;
+    border: 1px solid rgba(10,30,60,0.08);
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), #fbfdff);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    outline: none;
+    font-size: .98rem;
+    transition: box-shadow .16s ease, transform .12s ease, border-color .12s ease;
+  }
+  
+  input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus, select:focus{
+    border-color: rgba(0,114,255,0.9);
+    box-shadow: 0 8px 20px rgba(3,63,150,0.06);
+    transform: translateY(-1px);
+  }
+  
+  textarea{ min-height: 120px; resize: none; }
+  
+  /* file input - custom look */
+  input[type="file"]{
+    display:block;
+    font-size: .95rem;
+  }
+  
+  /* radios styled */
+  #gefi{ padding: .6rem; border-radius: 9px; border:1px dashed rgba(0,0,0,0.04);} 
+  .rad{ margin-left: .35rem; cursor:pointer; }
+  input[type="radio"]{ accent-color: var(--brand-1); }
+  
+  /* Buttons: image buttons exist in HTML; hide images visually and create neat styled buttons */
+  button{
+    appearance:none;
+    border: none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.6rem;
+    padding: .6rem 1rem;
+    border-radius: 10px;
+    background: linear-gradient(90deg,var(--brand-2), var(--brand-1));
+    color: white;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow: 0 8px 24px rgba(0,114,255,0.12);
+    transition: transform .14s cubic-bezier(.2,.9,.3,1), box-shadow .14s ease;
+  }
+  button:active{ transform: translateY(1px) scale(.998); }
+  button:hover{ transform: translateY(-3px); }
+  
+  /* Many of the original buttons contain <img> — hide those images and rely on CSS button text styling */
+  button img{ display:none; }
+  
+  /* Special small reset button style */
+  button[type="reset"]{ background: linear-gradient(180deg,#fff, rgba(255,255,255,0.96)); color:var(--muted); border: 1px solid rgba(10,30,60,0.05); box-shadow: 0 4px 10px rgba(12,40,80,0.04); }
+  
+  /* footer */
+  footer{ display:block; text-align:center; padding: .9rem 1rem; margin: 3rem auto 2rem auto; color:var(--muted); }
+  #copy{ margin:0; }
+  
+  /* Table in tab.html */
+  table{ width: 100%; border-collapse: collapse; max-width: var(--max-width); margin: 0 auto; box-shadow: var(--shadow-1); }
+  th, td{ padding: .8rem .6rem; text-align:left; border-bottom: 1px solid rgba(10,30,60,0.04); }
+  th{ background: linear-gradient(90deg, rgba(0,198,255,0.06), rgba(0,114,255,0.06)); font-weight:700; }
+  tr:hover td{ background: rgba(0,114,255,0.02); }
+  
+  /* Thanks page big heading */
+  #h{ color:var(--muted); }
+  main#thanks_main img, main img{ max-width:220px; }
+  
+  /* small utilities */
+  .appear{ animation-name: appear; animation-duration: 700ms; animation-timing-function: cubic-bezier(.2,.85,.25,1); }
+  @keyframes appear { from{ opacity:0; transform: translateY(18px);} to{ opacity:1; transform:none; } }
+  
+  /* Responsive: sidebar becomes compact top bar on small screens */
+  @media (max-width:880px){
+    aside{ padding:.6rem; gap:.6rem; }
+    .menuH h2{ font-size:.92rem }
+    header{ gap:.6rem; padding: .4rem; }
+    main{ padding:.8rem; }
+    #fieldsets{ flex-direction:column; align-items:stretch; }
+    fieldset{ max-width: 100% }
+    .frames{ gap:.6rem }
+  }
+  
+  /* Mobile: very small screen tweaks */
+  @media (max-width:480px){
+    header h1{ font-size:1.15rem }
+    .menuH{ font-size:.95rem }
+    button{ width:100%; }
+  }
+  
+  /* Respect user reduced motion preference */
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0s !important; transition-duration: 0s !important; }
+  }
+  
+  /* Print-friendly */
+  @media print{
+    aside, footer, .frames iframe { display:none }
+    body{ background: #fff }
+    fieldset{ box-shadow:none; border:1px solid #ddd }
+  }
+  

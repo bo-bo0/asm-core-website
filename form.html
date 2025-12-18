@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asm Core</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/small_asm_core_logo.png">
+    <style>
+
+        @keyframes rotate
+        {
+            0% {transform: rotate(0deg);}
+            40%{transform: rotate(360deg);}
+        }
+
+        fieldset 
+        {
+            margin-top: 4%;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+
+            font-size: x-large;
+            display: inline;
+            box-shadow: 1px 1px 4px;
+            border: none;
+            border-radius: 10%;
+        }
+
+        input 
+        {
+            height: 20px;
+        }
+
+        #fieldsets 
+        {
+            display: flex;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+
+        #gefi 
+        {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        select 
+        {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button 
+        {
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1%;
+            background: none;
+            border: none;
+        }
+
+        #logo 
+        {
+            animation-duration: 6s;
+            animation-name: rotate;
+            animation-iteration-count: infinite;
+            transform: rotate(360deg);
+        }
+
+        footer 
+        {
+            margin-top: -0.01%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <aside>
+        <a href="tab.html" class="menuH"><h2>Corsi</h2></a>
+        <a href="index.html" class="menuH"><h2>Home</h2></a>
+        <a href="form.html" class="menuH"><h2>Contatti</h2></a>
+    </aside>
+
+    <header class="appear">
+        <h1>Inviaci un messaggio</h1>
+        <img id="logo" src="images/small_asm_core_logo.png" alt="asm core logo" style="width: 85px;">
+    </header>
+
+    <main>
+        <form action="https://formtester.goodbytes.be/post.php" method="post" name="message">
+            <div class="appear" id="fieldsets">
+                <fieldset style="width: 260px;">
+                    <legend>Obbligatori</legend>
+                    
+                    <div class="inp">
+                    <label for="name">Nome</label>
+                    <br />
+                    <input type="text" name="name" id="name" required>
+                    </div>
+
+                    <div class="inp">
+                    <label for="surname">Cognome</label>
+                    <br />
+                    <input type="text" name="surname" id="surname" required>
+                    </div>
+
+                    <div class="inp">
+                    <label for="email">E-mail</label>
+                    <br />
+                    <input type="email" name="email" id="email" required>
+                    </div>
+
+
+                    <div style="margin-top: 3%;" class="inp">
+                    <label for="message">Cosa vuoi farci sapere?</label>
+                    <br />
+                    <textarea name="message" id="message" placeholder="Scrivi qui il tuo messaggio..." required cols="30" rows="10" style="resize: none;"></textarea> 
+                    </div>
+
+                </fieldset>
+
+                <fieldset style="width: 260px;">
+                    <legend>Facoltativi</legend>
+                    <div class="inp">
+                    <label for="tel">Telefono</label>
+                    <br />
+                    <input type="tel" name="tel" id="tel">
+                    </div>
+
+                    <div class="inp">
+                    <fieldset id="gefi">
+                        <legend>Genere</legend>
+                        <input type="radio" name="genre" id="male" value="male">
+                        <label class="rad" for="male">Maschio</label>
+                        <br />
+                        <input type="radio" name="genre" id="female" value="female">
+                        <label class="rad" for="female">Femmina</label>
+                        <br />
+
+                        <input type="radio" name="genre" id="other" value="other" title="Ti identifichi in un comodino?">
+                        <label class="rad" for="other" title="Ti identifichi in un comodino?">Altro</label>
+
+                    </fieldset>
+
+                    <br />
+                    <br />
+
+                    <select style="text-align: center;" name="role" id="role">
+                        <option hidden disabled selected>Seleziona ruolo</option>
+                        <option value="student">Studente</option>
+                        <option value="teacher">Insegnante</option>
+                        <option value="freelancer">Libero professionista</option>
+                    </select>
+
+                    <br />
+                    <br />
+                    <label style="font-size: medium;" for="file"><i>Puoi allegare un file se necessario</i></label>
+                    <br />
+                    <input type="file" name="file" id="file">
+
+                    </div>
+                </fieldset>
+            </div>
+            <button class="appear" type="submit">
+            <img width="125px" src="images/submit.png" alt="submit button">
+            </button>
+
+            <button class="appear" type="reset">
+            <img width="115px" src="images/reset.png" alt="submit button">
+            </button>
+        </form>
+    </main>
+
+    <footer>
+        <p id="copy"><i>&copy; Asm Core - 2025</i></p>
+    </footer>
+
+</body>
+</html>

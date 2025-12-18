@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asm Core</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/small_asm_core_logo.png">
+    
+    <style>
+
+        @keyframes logo_move 
+        {
+            0% {transform:translateX(-800px) rotate(0deg);}
+            25% {transform:translateX(800px) rotate(360deg);}
+            50% {transform:translateX(-800px) rotate(720deg);}
+            75% {transform:translateX(800px) rotate(1080deg);}
+            100% {transform:translateX(-800px) rotate(1440deg);}
+        }
+
+        body 
+        {
+            font-size: x-large;
+        }
+
+        td 
+        {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        button 
+        {
+            width: 100px;
+            height: 40px;
+            border-color: transparent;
+            border-radius: 13%;
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            box-shadow: 2px 2px 5px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        #logo 
+        {
+            width: 130px;
+            margin-top: 3%;
+            animation-name: logo_move;
+            animation-duration: 18s;
+            animation-iteration-count: infinite;
+        }
+
+    </style>
+
+</head>
+<body>
+    <aside>
+        <a href="tab.html" class="menuH"><h2>Corsi</h2></a>
+        <a href="index.html" class="menuH"><h2>Home</h2></a>
+        <a href="form.html" class="menuH"><h2>Contatti</h2></a>
+    </aside>
+    
+    <main class="appear">
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="7">Listino</th>
+                    </tr>
+
+                    <tr>
+                        <th>Corso</th>
+                        <th>Architettura</th>
+                        <th>Durata</th>
+                        <th>Livello</th>
+                        <th>Prezzo</th>
+                        <th>Descrizione rapida</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Fondamenti NASM</td>
+                        <td>NASM (x86/x86-64)</td>
+                        <td>8 ore</td>
+                        <td>Principiante → Intermedio</td>
+                        <td>€29</td>
+                        <td>Introduzione a sintassi NASM, registri, chiamate a funzione, debug con GDB.</td>
+                        <td><a href="thanks.html"><button>Iscriviti</button></a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Assembly per ARM</td>
+                        <td>ARM (AArch64)</td>
+                        <td>12 ore</td>
+                        <td>Intermedio</td>
+                        <td>€49</td>
+                        <td>Istruzioni ARM, gestione memoria, ottimizzazioni per embedded.</td>
+                        <td><a href="thanks.html"><button>Iscriviti</button></a></td>
+                    </tr>
+
+                    <tr>
+                        <td>GAS e toolchain GNU</td>
+                        <td>GAS (GNU Assembler)</td>
+                        <td>10 ore</td>
+                        <td>Principiante → Intermedio</td>
+                        <td>€39</td>
+                        <td>Uso di GAS, linking, directive, interoperabilità con C.</td>
+                        <td><a href="thanks.html"><button>Iscriviti</button></a></td>
+                    </tr>
+
+                    <tr>
+                        <td>MIPS: dal simulatore al codice reale</td>
+                        <td>MIPS</td>
+                        <td>10 ore</td>
+                        <td>Principiante</td>
+                        <td>€35</td>
+                        <td>Regole ISA, pipeline semplice, esercizi su SPIM/QtSpim.</td>
+                        <td><a href="thanks.html"><button>Iscriviti</button></a></td>
+                    </tr>
+
+                    <tr>
+                        <td>RISC-V: istruzioni e pratica</td>
+                        <td>RISC-V</td>
+                        <td>12 ore</td>
+                        <td>Intermedio</td>
+                        <td>€59</td>
+                        <td>Base ISA RISC-V, toolchain, esecuzione su emulatori e HW minimale.</td>
+                        <td><a href="thanks.html"><button>Iscriviti</button></a></td>
+                    </tr>
+
+                    <tr>
+                        <td>SPARC: architettura storica</td>
+                        <td>SPARC</td>
+                        <td>6 ore</td>
+                        <td>Intro / Storico</td>
+                        <td>€25</td>
+                        <td>Panoramica SPARC, esempi pratici e confronto con altre ISA.</td>
+                        <td><a href="thanks.html"><button>Iscriviti</button></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+            <img id="logo" src="images/small_asm_core_logo.png" alt="asm core logo">
+
+
+    </main>
+
+    <footer>
+        <p id="copy"><i>&copy; Asm Core - 2025</i></p>
+    </footer>
+</body>
+</html>

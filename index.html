@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asm Core</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/small_asm_core_logo.png">
+
+    <style>
+
+        @keyframes color_change
+        {
+            0% {color: #0072ff;}
+            25% {color:red;}
+            50% {color: purple;}
+            75% {color: green;}
+            100% {color: #0072ff;}
+        }
+
+        @keyframes types 
+        {
+            0% { content: "NASM"; }
+            16% { content: "ARM"; }
+            32% { content: "GAS"; }
+            48% { content: "MIPS"; }
+            64% { content: "RISC-V"; }
+            90% { content: "SPARC"; }
+        }
+
+        p
+        {
+            width: 380px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+
+            font-size: x-large;
+            margin-top: 5%;
+        }
+
+        h1 
+        {
+            color: #0072ff;
+
+            animation-name: color_change;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+
+        #logo 
+        {
+            margin-top: 5%;
+            margin-bottom: 4%;
+        }
+
+
+        #try
+        {
+            margin-top: 16%;
+
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+
+            font-size: xx-large;
+        }
+
+        .frames 
+        {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        iframe 
+        {
+            border-color: #0072ff;
+            box-shadow: 5px 5px 5px;
+        }
+
+        #asm_cin 
+        {
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+
+            opacity: 0.7;
+            border-width: 10px;
+            border-style: solid;
+
+            margin-top: 10%;
+            box-shadow: 5px 5px 5px;
+        }
+
+        #types 
+        {
+            margin-top: 10%;
+            font-weight: bold;
+            font-size: xx-large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+            margin-bottom: -6%;
+        }
+
+        #types::before 
+        {
+            content: "NASM";
+            animation-name: types;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        #asm_logo 
+        {
+            width: fit-content;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: -10%;
+            margin-top: 2%;
+        }
+
+        #free_tutorials 
+        {
+            margin-top: -10%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <aside>
+        <a href="tab.html" class="menuH"><h2>Corsi</h2></a>
+        <a href="index.html" class="menuH"><h2>Home</h2></a>
+        <a href="form.html" class="menuH"><h2>Contatti</h2></a>
+    </aside>
+
+    <header class="appear">
+        <img id="logo" src="images/asm_core_logo.png" alt="asm core logo">
+        <h1>Impara a parlare la lingua delle macchine</h1>
+    </header>
+
+    <main class="appear">
+        <section>
+
+            <p class="outlinedP">
+                Benvenuto in ASM CORE, il punto di partenza per chi vuole capire davvero come pensa una macchina.
+                Qui non troverai corsi generici: ti porteremo nel cuore del processore, tra registri, stack e istruzioni che danno vita a tutto ciò che chiami “software”.
+            </p>
+
+            <p class="outlinedP">
+                Che tu voglia dominare l’Assembly x86, esplorare l’ARM dei dispositivi mobili o scoprire i segreti dei microcontrollori, sei nel posto giusto.
+                Ti guideremo passo dopo passo, dal linguaggio macchina all’ottimizzazione a livello hardware. 
+            </p>
+
+            <p class="outlinedP">
+                Capire l’assembly significa vedere il mondo digitale da dentro.
+                E quando lo capisci... non programmi più allo stesso modo. 
+            </p>
+
+        </section>
+
+        <section>
+
+            <img id="asm_logo" loading="lazy" src="images/assembly_logo.png" alt="assembly logo">
+            <p id="types"></p>
+            <img id="asm_cin" src="images/assembly_cinematic.jpg" alt="assembly code sample">
+
+        </section>
+
+        <section id="free_tutorials">
+            <h2 id="try">Prova i nostri tutorial gratuiti!</h2>
+            
+            <div class="frames">            
+                <iframe width="400px" height="230px" src="https://www.youtube.com/embed/6S5KRJv-7RU"></iframe>
+                <iframe width="400px" height="230px" src="https://www.youtube.com/embed/gfmRrPjnEw4"></iframe>
+                <iframe width="400px" height="230px" src="https://www.youtube.com/embed/wLXIWKUWpSs"></iframe>
+            </div>
+
+            <div class="frames">
+                <iframe width="400px" height="230px" src="https://www.youtube.com/embed/4gwYkEK0gOk"></iframe>
+                <iframe width="400px" height="230px" src="https://www.youtube.com/embed/rxsBghsrvpI"></iframe>
+                <iframe width="400px" height="230px" src="https://www.youtube.com/embed/LdWU8JEfPhg"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p id="copy"><i>&copy; Asm Core - 2025</i></p>
+    </footer>
+
+</body>
+</html>
