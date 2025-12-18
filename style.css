@@ -1,20 +1,5 @@
-/*
-  style.improved.css
-  Version: 1.0
-  Note: CSS rewrite for the "Asm Core" site uploaded by the user.
-  Replace your existing style.css with this file to apply the new look.
-
-  Highlights:
-  - CSS variables for easy theme tweaking
-  - Responsive layout: sticky top navigation turns into a compact bar on mobile
-  - Modern, subtle neumorphic cards for fieldsets and content
-  - Fully restyled form controls (inputs, textarea, file, radios, selects)
-  - Accessible focus states and improved contrast
-  - Soft animations & reduced motion support
-  - Graceful handling of inline width/style attributes in original HTML
-*/
-
-:root{
+:root
+{
     --bg-1: #f7fbff;
     --bg-2: #e9f7ff;
     --brand-1: #0072ff; /* main brand color */
@@ -31,9 +16,10 @@
   }
   
   /* Reset-ish (targeted, non-invasive) */
-  *{box-sizing: border-box}
-  html,body{height:100%;}
-  body{
+  *{ box-sizing: border-box }
+  html,body{ height:100%; }
+  body
+  {
     margin:0;
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: linear-gradient(135deg,var(--bg-1) 0%, var(--bg-2) 60%, #fff 100%);
@@ -43,11 +29,9 @@
     line-height:1.45;
   }
   
-  /* Layout container */
-  :root > body > * { /* nothing */ }
-  
   /* Top aside as navigation bar */
-  aside{
+  aside
+  {
     display:flex;
     gap: clamp(8px,2vw,28px);
     align-items:center;
@@ -60,7 +44,8 @@
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   }
   
-  .menuH{
+  .menuH
+  {
     text-decoration:none;
     font-weight:600;
     font-size:1.05rem;
@@ -70,12 +55,13 @@
     transition: transform .18s ease, opacity .18s ease, background .18s ease;
     -webkit-tap-highlight-color: transparent;
   }
-  .menuH h2{margin:0;font-size:1rem;}
+  .menuH h2{ margin:0;font-size:1rem; }
   
   .menuH:hover{ transform: translateY(-3px); opacity:.95; }
   
   /* Header */
-  header{
+  header
+  {
     max-width:var(--max-width);
     margin: 2.2rem auto 1rem auto;
     padding: 0 1rem;
@@ -85,7 +71,9 @@
     justify-content:center;
     flex-wrap:wrap;
   }
-  header h1{
+
+  header h1
+  {
     font-size:clamp(1.25rem, 2.6vw, 2.2rem);
     margin:0;
     color:var(--brand-1);
@@ -94,17 +82,20 @@
   }
   
   /* logo animation - subtle */
-  #logo{
+  #logo
+  {
     width: clamp(60px,8vw,140px) !important; /* override inline widths */
     display:block;
     margin:0 auto;
     filter: drop-shadow(0 6px 14px rgba(0,114,255,0.14));
     transition: transform .8s cubic-bezier(.2,.9,.2,1);
   }
+
   #logo:hover{ transform: rotate(6deg) scale(1.02); }
   
   /* Main content wrapper */
-  main{
+  main
+  {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 1rem;
@@ -114,14 +105,16 @@
   }
   
   /* Sections & cards */
-  section{
+  section
+  {
     background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
     border-radius: var(--radius);
     padding: 1.1rem;
     box-shadow: var(--shadow-1);
   }
   
-  .outlinedP{
+  .outlinedP
+  {
     padding: 1rem;
     border-radius: 12px;
     background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(240,248,255,0.6));
@@ -135,14 +128,17 @@
   
   /* FORM styling */
   form{ width:100%; }
-  #fieldsets{
+  #fieldsets
+  {
     display:flex;
     gap:1rem;
     justify-content:center;
     align-items:flex-start;
     flex-wrap:wrap;
   }
-  fieldset{
+
+  fieldset
+  {
     background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,250,255,0.85));
     border-radius: 12px;
     border: 1px solid rgba(7,60,120,0.06);
@@ -157,7 +153,8 @@
   .inp{ margin: .6rem 0; display:flex; flex-direction:column; gap:.35rem; }
   label{ font-size: .98rem; color:#233745; }
   
-  input[type="text"], input[type="email"], input[type="tel"], textarea, select{
+  input[type="text"], input[type="email"], input[type="tel"], textarea, select
+  {
     padding: .55rem .65rem;
     border-radius: 9px;
     border: 1px solid rgba(10,30,60,0.08);
@@ -168,7 +165,8 @@
     transition: box-shadow .16s ease, transform .12s ease, border-color .12s ease;
   }
   
-  input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus, select:focus{
+  input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus, select:focus
+  {
     border-color: rgba(0,114,255,0.9);
     box-shadow: 0 8px 20px rgba(3,63,150,0.06);
     transform: translateY(-1px);
@@ -177,18 +175,20 @@
   textarea{ min-height: 120px; resize: none; }
   
   /* file input - custom look */
-  input[type="file"]{
+  input[type="file"]
+  {
     display:block;
     font-size: .95rem;
   }
   
   /* radios styled */
-  #gefi{ padding: .6rem; border-radius: 9px; border:1px dashed rgba(0,0,0,0.04);} 
+  #gefi{ padding: .6rem; border-radius: 9px; border:1px dashed rgba(0,0,0,0.04); } 
   .rad{ margin-left: .35rem; cursor:pointer; }
   input[type="radio"]{ accent-color: var(--brand-1); }
   
   /* Buttons: image buttons exist in HTML; hide images visually and create neat styled buttons */
-  button{
+  button
+  {
     appearance:none;
     border: none;
     display:inline-flex;
@@ -204,11 +204,13 @@
     box-shadow: 0 8px 24px rgba(0,114,255,0.12);
     transition: transform .14s cubic-bezier(.2,.9,.3,1), box-shadow .14s ease;
   }
+
   button:active{ transform: translateY(1px) scale(.998); }
   button:hover{ transform: translateY(-3px); }
     
   
-  button[type="reset"], button[type="submit"]{ background: linear-gradient(180deg,#fff, rgba(255,255,255,0.96)); color:var(--muted); border: 1px solid rgba(10,30,60,0.05); box-shadow: 0 4px 10px rgba(12,40,80,0.04); }
+  button[type="reset"], button[type="submit"]
+  { background: linear-gradient(180deg,#fff, rgba(255,255,255,0.96)); color:var(--muted); border: 1px solid rgba(10,30,60,0.05); box-shadow: 0 4px 10px rgba(12,40,80,0.04); }
   
   /* footer */
   footer{ display:block; text-align:center; padding: .9rem 1rem; margin: 3rem auto 2rem auto; color:var(--muted); }
@@ -229,7 +231,8 @@
   @keyframes appear { from{ opacity:0; transform: translateY(18px);} to{ opacity:1; transform:none; } }
   
   /* Responsive: sidebar becomes compact top bar on small screens */
-  @media (max-width:880px){
+  @media (max-width:880px)
+  {
     aside{ padding:.6rem; gap:.6rem; }
     .menuH h2{ font-size:.92rem }
     header{ gap:.6rem; padding: .4rem; }
@@ -240,19 +243,22 @@
   }
   
   /* Mobile: very small screen tweaks */
-  @media (max-width:480px){
+  @media (max-width:480px)
+  {
     header h1{ font-size:1.15rem }
     .menuH{ font-size:.95rem }
     button{ width:100%; }
   }
   
   /* Respect user reduced motion preference */
-  @media (prefers-reduced-motion: reduce){
+  @media (prefers-reduced-motion: reduce)
+  {
     *{ animation-duration: 0s !important; transition-duration: 0s !important; }
   }
   
   /* Print-friendly */
-  @media print{
+  @media print
+  {
     aside, footer, .frames iframe { display:none }
     body{ background: #fff }
     fieldset{ box-shadow:none; border:1px solid #ddd }
