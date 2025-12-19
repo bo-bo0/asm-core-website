@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asm Core</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="outlined_p_animation.css">
     <link rel="icon" href="images/small_asm_core_logo.png">
     <script src="global.js"></script>
     <style>
@@ -55,7 +56,6 @@
             margin-bottom: 4%;
         }
 
-
         #try
         {
             margin-top: 16%;
@@ -77,13 +77,14 @@
         iframe 
         {
             border-color: #0072ff;
-            box-shadow: 5px 5px 5px;
+            box-shadow: 2px 2px 2px 2px rgb(0, 0, 0);
+            margin-bottom: 20px;
         }
 
         #asm_cin 
         {
             display: block;
-            width: fit-content;
+            width: 500px;
             margin-left: auto;
             margin-right: auto;
 
@@ -127,6 +128,12 @@
             margin-top: -10%;
         }
 
+        #centered_group, #alone_center
+        {
+            width: fit-content;
+            margin: auto auto;
+        }
+
     </style>
 
 </head>
@@ -145,21 +152,24 @@
 
     <main class="appear">
         <section>
+            <div id="centered_group">
+                <p class="outlinedP">
+                    Benvenuto in ASM CORE, il punto di partenza per chi vuole capire davvero come pensa una macchina.
+                    Qui non troverai corsi generici: ti porteremo nel cuore del processore, tra registri, stack, cache e istruzioni che danno vita a tutto ciò che chiami “software”.
+                </p>
 
-            <p class="outlinedP">
-                Benvenuto in ASM CORE, il punto di partenza per chi vuole capire davvero come pensa una macchina.
-                Qui non troverai corsi generici: ti porteremo nel cuore del processore, tra registri, stack e istruzioni che danno vita a tutto ciò che chiami “software”.
-            </p>
-
-            <p class="outlinedP">
-                Che tu voglia dominare l’Assembly x86, esplorare l’ARM dei dispositivi mobili o scoprire i segreti dei microcontrollori, sei nel posto giusto.
-                Ti guideremo passo dopo passo, dal linguaggio macchina all’ottimizzazione a livello hardware. 
-            </p>
-
-            <p class="outlinedP">
-                Capire l’assembly significa vedere il mondo digitale da dentro.
-                E quando lo capisci... non programmi più allo stesso modo. 
-            </p>
+                <p class="outlinedP">
+                    Che tu voglia dominare l’Assembly x86, esplorare l’ARM dei dispositivi mobili o scoprire i segreti dei microcontrollori, sei nel posto giusto.
+                    Ti guideremo passo dopo passo, dal linguaggio macchina all’ottimizzazione a livello hardware. 
+                </p>
+            </div>
+            
+            <div id="alone_center">
+                <p class="outlinedP">
+                    Capire l’assembly significa vedere il mondo digitale da dentro.
+                    E quando lo capisci... non programmi più allo stesso modo. 
+                </p>
+            </div>
 
         </section>
 

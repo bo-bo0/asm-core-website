@@ -1,0 +1,26 @@
+.outlinedP 
+{
+  border: 2px solid transparent; 
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.6), rgba(240,248,255,0.6)),
+    linear-gradient(90deg, #00c6ff, #7ef0ff, #00c6ff);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  background-size: auto, 200% 100%;
+  background-position: 0 0, 0% 50%;
+  transition: transform .12s ease;
+  animation: outlinedP-border-move 3s linear infinite;
+}
+
+@keyframes outlinedP-border-move 
+{
+  0%   { background-position: 0 0,   0% 50%; }
+  50%  { background-position: 0 0, 100% 50%; }
+  100% { background-position: 0 0,   0% 50%; }
+}
+
+.outlinedP:hover 
+{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0,198,255,0.12), 0 1px 2px rgba(0,0,0,0.06);
+}

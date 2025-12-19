@@ -20,13 +20,22 @@
   html,body{ height:100%; }
   body
   {
-    margin:0;
+    margin: 0;
+    min-height: 100vh;
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(135deg,var(--bg-1) 0%, var(--bg-2) 60%, #fff 100%);
-    color:#15202b;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.45;
+
+    background: linear-gradient
+    (
+      135deg,
+      var(--bg-1) 0%,
+      var(--bg-2) 60%,
+      #fff 100%
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #15202b;
+    line-height: 1.45;
   }
   
   /* Top aside as navigation bar */
@@ -81,17 +90,14 @@
     letter-spacing: -.02em;
   }
   
-  /* logo animation - subtle */
-  #logo
+  /* logo animation */
+  #logo_move
   {
-    width: clamp(60px,8vw,140px) !important; /* override inline widths */
     display:block;
     margin:0 auto;
     filter: drop-shadow(0 6px 14px rgba(0,114,255,0.14));
     transition: transform .8s cubic-bezier(.2,.9,.2,1);
   }
-
-  #logo:hover{ transform: rotate(6deg) scale(1.02); }
   
   /* Main content wrapper */
   main
@@ -120,11 +126,13 @@
     background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(240,248,255,0.6));
     border: 1px solid rgba(10,40,110,0.04);
     color:var(--muted);
+    display: inline-block;
+    box-shadow: 1px 1px 2px 1px #888888;
   }
   
   /* iframe gallery */
   .frames{ display:flex; gap: 1rem; flex-wrap:wrap; justify-content:center; }
-  .frames iframe{ border: none; border-radius: 10px; box-shadow: var(--shadow-2); width: clamp(260px, 30vw, 400px); height: clamp(170px, 22vw, 230px); }
+  .frames iframe{ border: none; border-radius: 10px; width: clamp(260px, 30vw, 400px); height: clamp(170px, 22vw, 230px); }
   
   /* FORM styling */
   form{ width:100%; }
@@ -137,7 +145,8 @@
     flex-wrap:wrap;
   }
 
-fieldset {
+fieldset 
+{
   background: linear-gradient(180deg,#fff,#f6fbff);
   border-radius: 14px;
   border: 1px solid rgba(0,114,255,.08);
@@ -146,7 +155,8 @@ fieldset {
 }
 
   
-  legend {
+  legend 
+{
   font-weight: 700;
   color: var(--brand-1);
   padding: 0 .6rem;
@@ -189,7 +199,6 @@ fieldset {
   .rad{ margin-left: .35rem; cursor:pointer; }
   input[type="radio"]{ accent-color: var(--brand-1); }
   
-  /* Buttons: image buttons exist in HTML; hide images visually and create neat styled buttons */
   button
   {
     appearance:none;
@@ -232,7 +241,7 @@ fieldset {
   
   /* Thanks page big heading */
   #h{ color:var(--muted); }
-  main#thanks_main img, main img{ max-width:220px; }
+  main#thanks_main img{ max-width:220px; }
   
   /* small utilities */
   .appear{ animation-name: appear; animation-duration: 700ms; animation-timing-function: cubic-bezier(.2,.85,.25,1); }
@@ -267,46 +276,63 @@ fieldset {
   /* Print-friendly */
   @media print
   {
-    aside, footer, .frames iframe { display:none }
+    aside, footer { display:none }
     body{ background: #fff }
     fieldset{ box-shadow:none; border:1px solid #ddd }
   }
   
-  form {
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,.85),
-    rgba(240,248,255,.75)
-  );
-  padding: 1.4rem;
-  border-radius: 18px;
-  box-shadow: var(--shadow-1);
-}
+  form 
+  {
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,.85),
+      rgba(240,248,255,.75)
+    );
+    padding: 1.4rem;
+    border-radius: 18px;
+    box-shadow: var(--shadow-1);
+  }
 
 input:focus,
 textarea:focus,
-select:focus {
+select:focus 
+{
   box-shadow:
     0 0 0 3px rgba(0,114,255,.15),
     0 8px 20px rgba(0,0,0,.05);
 }
 
-button[type="submit"] {
+button[type="submit"] 
+{
   background: linear-gradient(90deg,var(--brand-2),var(--brand-1));
   color: white;
 }
 
-button[type="reset"] {
+button[type="reset"] 
+{
   background: transparent;
   color: var(--muted);
   border: 1px dashed rgba(0,0,0,.15);
 }
 
-#logo {
+#logo 
+{
   animation: float 4s ease-in-out infinite;
 }
 
-@keyframes float {
+img, iframe 
+{
+  transition: transform 0.4s ease-in-out;
+}
+
+img:hover, iframe:hover 
+{
+  transform: scale(1.05);
+}
+
+
+@keyframes float 
+{
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
