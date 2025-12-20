@@ -161,6 +161,8 @@ fieldset
   
   input[type="text"], input[type="email"], input[type="tel"], textarea, select
   {
+    margin-top: -6%;
+    margin-bottom: 6%;
     padding: .55rem .65rem;
     border-radius: 9px;
     border: 1px solid rgba(10,30,60,0.08);
