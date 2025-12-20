@@ -192,6 +192,9 @@ fieldset
   .rad{ margin-left: .35rem; cursor:pointer; }
   input[type="radio"]{ accent-color: var(--brand-1); }
   
+  input[type="radio"]:hover, select:hover
+  { cursor: pointer; }
+  
   button
   {
     appearance:none;
@@ -215,7 +218,7 @@ fieldset
     
   
   button[type="reset"], button[type="submit"]
-  { background: linear-gradient(180deg,#fff, rgba(255,255,255,0.96)); color:var(--muted); border: 1px solid rgba(10,30,60,0.05); box-shadow: 0 4px 10px rgba(12,40,80,0.04); }
+  { background: linear-gradient(180deg,#fff, rgba(255,255,255,0.96)); color:var(--muted); box-shadow: 0 4px 10px rgba(12,40,80,0.04); }
   
   /* footer */
   footer{ display:block; text-align:center; padding: .9rem 1rem; margin: 3rem auto 2rem auto; color:var(--muted); }
