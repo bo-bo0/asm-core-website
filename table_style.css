@@ -13,7 +13,8 @@ table
   border-spacing: 0;
   border-radius: var(--radius);
   overflow: hidden;
-  background: linear-gradient(
+  background: linear-gradient
+  (
     180deg,
     rgba(255,255,255,.85),
     rgba(240,248,255,.75)
