@@ -155,141 +155,145 @@ fieldset
   padding: 0 .6rem;
 }
 
+h2#current 
+{
+  color: rgb(1, 104, 164);
+}
   
-  .inp{ margin: .6rem 0; display:flex; flex-direction:column; gap:.35rem; }
-  label{ font-size: .98rem; color:#233745; }
-  
-  input[type="text"], input[type="email"], input[type="tel"], textarea, select
-  {
-    margin-top: -6%;
-    margin-bottom: 6%;
-    padding: .55rem .65rem;
-    border-radius: 9px;
-    border: 1px solid rgba(10,30,60,0.08);
-    background: linear-gradient(180deg, rgba(255,255,255,0.9), #fbfdff);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-    outline: none;
-    font-size: .98rem;
-    transition: box-shadow .16s ease, transform .12s ease, border-color .12s ease;
-  }
-  
-  input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus, select:focus
-  {
-    border-color: rgba(0,114,255,0.9);
-    box-shadow: 0 8px 20px rgba(3,63,150,0.06);
-    transform: translateY(-1px);
-  }
-  
-  textarea{ min-height: 120px; resize: none; }
-  
-  /* file input - custom look */
-  input[type="file"]
-  {
-    display:block;
-    font-size: .95rem;
-  }
-  
-  /* radios styled */
-  #gefi{ padding: .6rem; border-radius: 9px; border:1px dashed rgba(0,0,0,0.04); } 
-  .rad{ margin-left: .35rem; cursor:pointer; }
-  input[type="radio"]{ accent-color: var(--brand-1); }
-  
-  input[type="radio"]:hover, select:hover
-  { cursor: pointer; }
-  
-  button
-  {
-    appearance:none;
-    border: none;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:.6rem;
-    padding: .6rem 1rem;
-    border-radius: 10px;
-    background: linear-gradient(90deg,var(--brand-2), var(--brand-1));
-    color: white;
-    font-weight:700;
-    cursor:pointer;
-    box-shadow: 0 8px 24px rgba(0,114,255,0.12);
-    transition: transform .14s cubic-bezier(.2,.9,.3,1), box-shadow .14s ease;
-  }
+.inp{ margin: .6rem 0; display:flex; flex-direction:column; gap:.35rem; }
+label{ font-size: .98rem; color:#233745; }
 
-  button:active{ transform: translateY(1px) scale(.998); }
-  button:hover{ transform: translateY(-3px); }
-    
+input[type="text"], input[type="email"], input[type="tel"], textarea, select
+{
+  margin-top: -6%;
+  margin-bottom: 6%;
+  padding: .55rem .65rem;
+  border-radius: 9px;
+  border: 1px solid rgba(10,30,60,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), #fbfdff);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+  outline: none;
+  font-size: .98rem;
+  transition: box-shadow .16s ease, transform .12s ease, border-color .12s ease;
+}
   
-  button[type="reset"], button[type="submit"]
-  { background: linear-gradient(180deg,#fff, rgba(255,255,255,0.96)); color:var(--muted); box-shadow: 0 4px 10px rgba(12,40,80,0.04); }
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus, select:focus
+{
+  border-color: rgba(0,114,255,0.9);
+  box-shadow: 0 8px 20px rgba(3,63,150,0.06);
+  transform: translateY(-1px);
+}
+
+textarea{ min-height: 120px; resize: none; }
+
+/* file input - custom look */
+input[type="file"]
+{
+  display:block;
+  font-size: .95rem;
+}
+
+/* radios styled */
+#gefi{ padding: .6rem; border-radius: 9px; border:1px dashed rgba(0,0,0,0.04); } 
+.rad{ margin-left: .35rem; cursor:pointer; }
+input[type="radio"]{ accent-color: var(--brand-1); }
+
+input[type="radio"]:hover, select:hover
+{ cursor: pointer; }
+
+button
+{
+  appearance:none;
+  border: none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg,var(--brand-2), var(--brand-1));
+  color: white;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 8px 24px rgba(0,114,255,0.12);
+  transition: transform .14s cubic-bezier(.2,.9,.3,1), box-shadow .14s ease;
+}
+
+button:active{ transform: translateY(1px) scale(.998); }
+button:hover{ transform: translateY(-3px); }
   
-  /* footer */
-  footer{ display:block; text-align:center; padding: .9rem 1rem; margin: 3rem auto 2rem auto; color:var(--muted); }
-  #copy
-  {
-      width: fit-content;
-      margin: auto auto;
-      font-size: medium;
-  }
-  
-  /* Table in tab.html */
-  table{ width: 100%; border-collapse: collapse; max-width: var(--max-width); margin: 0 auto; box-shadow: var(--shadow-1); }
-  th, td{ padding: .8rem .6rem; text-align:left; border-bottom: 1px solid rgba(10,30,60,0.04); }
-  th{ background: linear-gradient(90deg, rgba(0,198,255,0.06), rgba(0,114,255,0.06)); font-weight:700; }
-  tr:hover td{ background: rgba(0,114,255,0.02); }
-  
-  /* Thanks page big heading */
-  #h{ color:var(--muted); }
-  main#thanks_main img{ max-width:220px; }
-  
-  /* small utilities */
-  .appear{ animation-name: appear; animation-duration: 700ms; animation-timing-function: cubic-bezier(.2,.85,.25,1); }
-  @keyframes appear { from{ opacity:0; transform: translateY(18px);} to{ opacity:1; transform:none; } }
-  
-  /* Responsive: sidebar becomes compact top bar on small screens */
-  @media (max-width:880px)
-  {
-    aside{ padding:.6rem; gap:.6rem; }
-    .menuH h2{ font-size:.92rem }
-    header{ gap:.6rem; padding: .4rem; }
-    main{ padding:.8rem; }
-    #fieldsets{ flex-direction:column; align-items:stretch; }
-    fieldset{ max-width: 100% }
-    .frames{ gap:.6rem }
-  }
-  
-  /* Mobile: very small screen tweaks */
-  @media (max-width:480px)
-  {
-    header h1{ font-size:1.15rem }
-    .menuH{ font-size:.95rem }
-    button{ width:100%; }
-  }
-  
-  /* Respect user reduced motion preference */
-  @media (prefers-reduced-motion: reduce)
-  {
-    *{ animation-duration: 0s !important; transition-duration: 0s !important; }
-  }
-  
-  /* Print-friendly */
-  @media print
-  {
-    aside, footer { display:none }
-    body{ background: #fff }
-    fieldset{ box-shadow:none; border:1px solid #ddd }
-  }
-  
-  form 
-  {
-    background: linear-gradient(
-      180deg,
-      rgba(255,255,255,.85),
-      rgba(240,248,255,.75)
-    );
-    padding: 1.4rem;
-    border-radius: 18px;
-    box-shadow: var(--shadow-1);
-  }
+
+button[type="reset"], button[type="submit"]
+{ background: linear-gradient(180deg,#fff, rgba(255,255,255,0.96)); color:var(--muted); box-shadow: 0 4px 10px rgba(12,40,80,0.04); }
+
+/* footer */
+footer{ display:block; text-align:center; padding: .9rem 1rem; margin: 3rem auto 2rem auto; color:var(--muted); }
+#copy
+{
+    width: fit-content;
+    margin: auto auto;
+    font-size: medium;
+}
+
+/* Table in tab.html */
+table{ width: 100%; border-collapse: collapse; max-width: var(--max-width); margin: 0 auto; box-shadow: var(--shadow-1); }
+th, td{ padding: .8rem .6rem; text-align:left; border-bottom: 1px solid rgba(10,30,60,0.04); }
+th{ background: linear-gradient(90deg, rgba(0,198,255,0.06), rgba(0,114,255,0.06)); font-weight:700; }
+tr:hover td{ background: rgba(0,114,255,0.02); }
+
+/* Thanks page big heading */
+#h{ color:var(--muted); }
+main#thanks_main img{ max-width:220px; }
+
+/* small utilities */
+.appear{ animation-name: appear; animation-duration: 700ms; animation-timing-function: cubic-bezier(.2,.85,.25,1); }
+@keyframes appear { from{ opacity:0; transform: translateY(18px);} to{ opacity:1; transform:none; } }
+
+/* Responsive: sidebar becomes compact top bar on small screens */
+@media (max-width:880px)
+{
+  aside{ padding:.6rem; gap:.6rem; }
+  .menuH h2{ font-size:.92rem }
+  header{ gap:.6rem; padding: .4rem; }
+  main{ padding:.8rem; }
+  #fieldsets{ flex-direction:column; align-items:stretch; }
+  fieldset{ max-width: 100% }
+  .frames{ gap:.6rem }
+}
+
+/* Mobile: very small screen tweaks */
+@media (max-width:480px)
+{
+  header h1{ font-size:1.15rem }
+  .menuH{ font-size:.95rem }
+  button{ width:100%; }
+}
+
+/* Respect user reduced motion preference */
+@media (prefers-reduced-motion: reduce)
+{
+  *{ animation-duration: 0s !important; transition-duration: 0s !important; }
+}
+
+/* Print-friendly */
+@media print
+{
+  aside, footer { display:none }
+  body{ background: #fff }
+  fieldset{ box-shadow:none; border:1px solid #ddd }
+}
+
+form 
+{
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.85),
+    rgba(240,248,255,.75)
+  );
+  padding: 1.4rem;
+  border-radius: 18px;
+  box-shadow: var(--shadow-1);
+}
 
 input:focus,
 textarea:focus,
